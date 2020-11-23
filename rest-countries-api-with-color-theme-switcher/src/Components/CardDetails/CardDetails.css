@@ -1,0 +1,72 @@
+.card-details .container > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+.card-details .container > .btn-primary {
+  padding: 1.2em 2.5em;
+  margin: 4em 0 8em;
+}
+
+.flag img {
+  object-fit: cover;
+  display: block;
+  width: 80%;
+  min-width: 200px;
+}
+
+.country-details {
+  color: var(--font-color);
+}
+
+.country-details h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.country-details > div:first-of-type {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.country-details > div > div:first-child {
+  margin-right: 4em;
+}
+
+.country-details > div:last-of-type {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.country-details > div:last-of-type .btn-primary {
+  font-size: 0.6rem;
+  margin: 1em 1em;
+}
+
+@media (max-width: 750px) {
+  .card-details .container > div {
+    grid-template-columns: 1fr;
+    place-items: unset;
+  }
+
+  .card-details .container > .btn-primary {
+    margin-bottom: 2em;
+  }
+
+  .flag img {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  .country-details > div:first-of-type {
+    flex-direction: column;
+  }
+
+  .country-details > div > div:first-child {
+    margin-right: unset;
+    margin-bottom: 1em;
+  }
+}

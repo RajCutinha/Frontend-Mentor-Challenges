@@ -1,0 +1,60 @@
+:root {
+  /* (Dark Mode Text & Light Mode Elements) */
+  --body-background-color: hsl(0, 0%, 98%);
+  --font-color: hsl(200, 15%, 8%);
+  --elements-color: hsl(0, 0%, 100%);
+}
+
+[data-theme="dark"] {
+  --body-background-color: hsl(207, 26%, 17%);
+  --font-color: hsl(0, 0%, 100%);
+  --elements-color: rgb(43, 57, 69);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--body-background-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 1em 2em;
+  background-color: var(--elements-color);
+  color: var(--font-color);
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 0.6em;
+  font-size: 0.8rem;
+}
+
+.btn-primary i {
+  margin-right: 0.5em;
+}
+
+.bold {
+  font-weight: bold;
+}

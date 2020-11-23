@@ -1,0 +1,30 @@
+header.title {
+  background-color: var(--body-background-color);
+  color: var(--font-color);
+  padding: 2em 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+header.title .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.title h1 {
+  font-weight: 900;
+}
+
+header.title span {
+  font-weight: 600;
+}
+
+header.title i {
+  margin-right: 0.5em;
+}
+
+header.title .container > div {
+  cursor: pointer;
+}

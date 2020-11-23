@@ -1,0 +1,81 @@
+.filter {
+  background-color: var(--body-background-color);
+  padding: 2em 0;
+}
+
+.filter form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.searchbox {
+  position: relative;
+  width: 40%;
+  min-width: 250px;
+}
+
+.searchbox input {
+  padding: 1em 0 1em 4em;
+  width: 100%;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.6em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--elements-color);
+  color: var(--font-color);
+}
+
+.searchbox input:focus {
+  outline: none;
+}
+
+.searchbox i {
+  position: absolute;
+  top: 50%;
+  left: 1.5em;
+  transform: translateY(-50%);
+  color: var(--font-color);
+}
+
+.dropdown {
+  position: relative;
+  width: 15%;
+  min-width: 175px;
+}
+
+.dropdown select {
+  appearance: none;
+  border: none;
+  padding: 1em;
+  background-color: var(--elements-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.6em;
+  width: 100%;
+  color: var(--font-color);
+  font-size: 1rem;
+}
+
+.dropdown select:focus {
+  outline: none;
+}
+
+.dropdown i {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 500px) {
+  .filter form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .searchbox {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+}
