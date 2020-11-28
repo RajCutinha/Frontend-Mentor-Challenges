@@ -74,6 +74,7 @@ function App() {
         false
       ) : (
         <Filter
+          select={select}
           setSelect={setSelect}
           countryInput={countryInput}
           setCountryInput={setCountryInput}

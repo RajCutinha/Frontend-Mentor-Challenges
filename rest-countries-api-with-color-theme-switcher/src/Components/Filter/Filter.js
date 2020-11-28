@@ -1,6 +1,6 @@
 import "./Filter.css";
 
-const Filter = ({ setSelect, countryInput, setCountryInput }) => {
+const Filter = ({ select, setSelect, countryInput, setCountryInput }) => {
   return (
     <div className="filter">
       <div className="container">
@@ -15,7 +15,7 @@ const Filter = ({ setSelect, countryInput, setCountryInput }) => {
             />
           </div>
           <div className="dropdown">
-            <select onChange={(e) => setSelect(e.target.value)}>
+            <select onChange={(e) => setSelect(e.target.value)} value={select}>
               <option value="">Filter by Region</option>
               <option value="Africa">Africa</option>
               <option value="Americas">America</option>

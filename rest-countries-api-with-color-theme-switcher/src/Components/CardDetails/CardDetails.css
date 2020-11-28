@@ -7,6 +7,7 @@
 .card-details .container > .btn-primary {
   padding: 1.2em 2.5em;
   margin: 4em 0 8em;
+  cursor: pointer;
 }
 
 .flag img {
