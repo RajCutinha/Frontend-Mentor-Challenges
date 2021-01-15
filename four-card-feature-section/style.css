@@ -1,0 +1,151 @@
+:root {
+	/* ### Primary */
+	--primary-red: hsl(0, 78%, 62%);
+	--primary-cyan: hsl(180, 62%, 55%);
+	--primary-orange: hsl(34, 97%, 64%);
+	--primary-blue: hsl(212, 86%, 64%);
+
+	/* ### Neutral */
+	--neutral-very-dark-blue: hsl(234, 12%, 34%);
+	--neutral-grayish-blue: hsl(229, 6%, 66%);
+	--neutral-very-light-gray: hsl(0, 0%, 98%);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	min-height: 100vh;
+	background-color: var(--neutral-very-light-gray);
+	font-family: "Poppins", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	width: min(90%, 1440px);
+}
+
+h1 {
+	text-align: center;
+	color: var(--neutral-grayish-blue);
+	font-weight: 200;
+	font-size: 2.5rem;
+}
+
+h1:first-of-type {
+	margin: 1em 0 0;
+}
+
+h1:last-of-type {
+	font-weight: 600;
+	color: var(--neutral-very-dark-blue);
+	margin-bottom: 0.5em;
+}
+
+.container > p {
+	text-align: center;
+	max-width: 55ch;
+	margin: 0 auto 3em;
+}
+
+.landing-cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2em;
+	align-items: center;
+	margin-bottom: 2em;
+}
+
+.landing-cards .card {
+	background-color: #fff;
+	position: relative;
+	box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.1);
+	padding: 3em 1em 2em;
+	border-radius: 0.3em;
+}
+
+.landing-cards .card::before {
+	content: "";
+	position: absolute;
+	border-radius: 1em 1em 0 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 2%;
+}
+
+.landing-cards .card h3 {
+	margin-bottom: 0.5em;
+	color: var(--neutral-very-dark-blue);
+}
+
+.landing-cards .card p {
+	font-size: 1rem;
+	font-weight: 400;
+	color: var(--neutral-grayish-blue);
+	margin-bottom: 2em;
+}
+
+.landing-cards .card img {
+	display: block;
+	margin-left: auto;
+}
+
+.landing-cards .card:first-child {
+	grid-row: 1/3;
+}
+
+.landing-cards .card:first-child::before {
+	background-color: var(--primary-cyan);
+}
+
+.landing-cards .card:nth-child(2)::before {
+	background-color: var(--primary-red);
+}
+
+.landing-cards .card:nth-child(3) {
+	grid-row: 2/3;
+}
+
+.landing-cards .card:nth-child(3)::before {
+	background-color: var(--primary-orange);
+}
+
+.landing-cards .card:last-child {
+	grid-row: 1/3;
+}
+
+.landing-cards .card:last-child::before {
+	background-color: var(--primary-blue);
+}
+
+footer {
+	text-align: center;
+}
+
+@media (max-width: 1000px) {
+	.landing-cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.landing-cards .card:first-child,
+	.landing-cards .card:nth-child(3),
+	.landing-cards .card:last-child {
+		grid-row: unset;
+	}
+}
+
+@media (max-width: 650px) {
+	.landing-cards {
+		grid-template-columns: 1fr;
+	}
+}
