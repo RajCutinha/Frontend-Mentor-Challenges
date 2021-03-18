@@ -100,16 +100,14 @@ const reload = (done) => {
   done();
 };
 
-const watch = () =>
+const watch = () => {
   gulp.watch(
-    [
-      `${src}/*.html`,
-      `${src}/scss/**/*.scss`,
-      `${src}/js/**/*.js`,
-      `${src}/assets/**`,
-    ],
-    gulp.series(assets, html, scss, js, reload)
+    [`${src}/*.html`, `${src}/js/**/*.js`, `${src}/assets/**`],
+    gulp.series(assets, html, js, reload)
   );
+
+  gulp.watch([`${src}/scss/**/*.scss`], scss);
+};
 
 const dev = gulp.series(assets, html, scss, js, serve, watch);
 
