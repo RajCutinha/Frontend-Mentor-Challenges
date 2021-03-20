@@ -103,6 +103,14 @@ h5 {
   font-size: 1.5rem;
 }
 
+.burger {
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+
 .btn {
   font-size: 1rem;
   font-family: "Ubuntu", sans-serif;
@@ -239,7 +247,7 @@ nav ul li ul {
     );
   border-top-right-radius: 6em;
   border-bottom-left-radius: 6em;
-  margin-bottom: 4em;
+  margin-bottom: 10em;
 
   .row {
     align-items: center;
@@ -267,7 +275,7 @@ nav ul li ul {
 }
 
 .open {
-  margin-bottom: 6em;
+  margin-bottom: 10em;
 
   .row {
     align-items: center;
@@ -307,7 +315,6 @@ footer {
   .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    justify-content: center;
   }
 
   .lead {
@@ -329,6 +336,277 @@ footer {
       color: var(--neutral-grayish-blue);
       text-decoration: none;
       font-family: "Overpass", sans-serif;
+    }
+  }
+}
+
+@media (max-width: 1340px) {
+  .future {
+    .row {
+      & div img {
+        margin-left: 7em;
+      }
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  .future {
+    .row {
+      & div img {
+        margin-left: 6em;
+      }
+    }
+  }
+}
+
+@media (max-width: 1140px) {
+  .future {
+    .row {
+      & div img {
+        margin-left: 5em;
+      }
+    }
+  }
+
+  .infrastructure {
+    margin-bottom: 5em;
+
+    .row {
+      & div p {
+        line-height: 1.5;
+      }
+
+      & div h3 {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .open {
+    .row {
+      & div img {
+        margin-left: -11em;
+      }
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .future {
+    .row {
+      & div img {
+        margin-left: 4em;
+      }
+    }
+  }
+}
+
+@media (max-width: 940px) {
+  .future {
+    .row {
+      & div img {
+        margin-left: 3em;
+      }
+    }
+  }
+
+  .infrastructure {
+    padding: 1em 0;
+
+    .row {
+      & div img {
+        transform: scale(1.8);
+      }
+    }
+  }
+
+  .open {
+    .row {
+      & div img {
+        margin-left: -9em;
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+
+    span {
+      padding: 0.08em 1em;
+      background-color: var(--neutral-white);
+      display: block;
+      margin-bottom: 0.4em;
+    }
+  }
+
+  nav {
+    margin-bottom: 8em;
+    justify-content: space-between;
+
+    ul {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+
+  .intro {
+    h1 {
+      max-width: 14ch;
+      margin: 0 auto 0.4em;
+    }
+  }
+
+  .future {
+    padding-bottom: 18em;
+
+    h3 {
+      margin-bottom: 2em;
+    }
+
+    .row {
+      flex-direction: column-reverse;
+      gap: 5em;
+
+      & div img {
+        margin-left: unset;
+        width: 100%;
+      }
+
+      & div :is(p, h5) {
+        text-align: center;
+      }
+    }
+  }
+
+  .infrastructure {
+    padding: 1em 0 10em;
+    background-position: center -12em;
+    background-size: contain;
+    margin-bottom: 2em;
+
+    .row {
+      flex-direction: column;
+
+      & div img {
+        display: block;
+        width: 80%;
+        transform: unset;
+        margin: -14em auto 0;
+      }
+
+      & div :is(h3, p) {
+        text-align: center;
+      }
+
+      & div p {
+        line-height: 2;
+      }
+
+      & div h3 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .open {
+    margin-bottom: unset;
+
+    .row {
+      flex-direction: column;
+      gap: 10em;
+
+      & div img:not(.desktop) {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+
+      & div :is(p, h5) {
+        text-align: center;
+      }
+    }
+  }
+
+  footer {
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 5em;
+      justify-items: center;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.7rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .infrastructure {
+    .row {
+      & div img {
+        margin-top: -12em;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .infrastructure {
+    .row {
+      & div img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  footer {
+    .container {
+      grid-template-columns: 1fr;
+      row-gap: 5em;
+      justify-items: center;
+
+      div:not(div:first-child) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+
+    ul li {
+      text-align: center;
     }
   }
 }

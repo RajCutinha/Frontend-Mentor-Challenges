@@ -31,7 +31,7 @@ const src = path.resolve("src"),
   dist = path.resolve("dist");
 
 const html = async () => {
-  gulp
+  return gulp
     .src(`${src}/*.html`)
     .pipe(plumber())
     .pipe(
@@ -55,7 +55,7 @@ const html = async () => {
 };
 
 const scss = async () => {
-  gulp
+  return gulp
     .src(`${src}/scss/**/*.scss`)
     .pipe(plumber())
     .pipe(sourcemaps.init())
