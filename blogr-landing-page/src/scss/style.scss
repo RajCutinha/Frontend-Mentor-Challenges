@@ -354,6 +354,22 @@ footer {
   .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    row-gap: 2em;
+  }
+
+  .attribution {
+    grid-column: 1/-1;
+    text-align: center;
+    color: var(--neutral-grayish-blue);
+    font-family: "Ubuntu", sans-serif;
+    width: 100%;
+    display: block;
+
+    a {
+      color: var(--neutral-white);
+      text-decoration: none;
+      font-family: "Ubuntu", sans-serif;
+    }
   }
 
   .lead {
@@ -738,7 +754,7 @@ footer {
       row-gap: 5em;
       justify-items: center;
 
-      div:not(div:first-child) {
+      div:not(div:first-child, .attribution) {
         width: 100%;
         display: flex;
         justify-content: center;
