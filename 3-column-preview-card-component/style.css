@@ -50,7 +50,7 @@ main {
 }
 
 .row {
-  margin-bottom: 8em;
+  margin-bottom: 2em;
   display: flex;
   justify-content: center;
 }
