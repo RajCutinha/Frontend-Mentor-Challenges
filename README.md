@@ -1,22 +1,5 @@
 # Frontend Mentor Challenges
 
-## Table of contents
-
-### Frontend Mentor Challenges
-
-- [Frontend Mentor Challenges](#frontend-mentor-challenges)
-  - [Table of contents](#table-of-contents)
-    - [Frontend Mentor Challenges](#frontend-mentor-challenges-1)
-  - [Overview](#overview)
-    - [Screenshot](#screenshot)
-    - [The challenge](#the-challenge)
-      - [Users should be able to:](#users-should-be-able-to)
-    - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-    - [Useful resources](#useful-resources)
-  - [Author](#author)
-
 ## Overview
 
 On this Repository you can find all my Frontend Menter Challenges solutions. Frontend Mentor challenges help you improve your coding skills by building realistic projects.
@@ -30,9 +13,8 @@ On this Repository you can find all my Frontend Menter Challenges solutions. Fro
 Build out the **Website/Application** close
 to how the design looks from the provided Design Files
 
- <br/>
- 
 #### Users should be able to:
+
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the pages
 
@@ -68,7 +50,7 @@ to how the design looks from the provided Design Files
 
 ### Useful resources
 
-- [conquering-responsive-layouts](https://courses.kevinpowell.co/conquering-responsive-layouts) -
+- [conquering-responsive-layouts](https://courses.kevinpowell.co/conquering-responsive-layouts)
 
   I used to struggle with responsive Layouts.
   This is a 21-days challenge by Kevin Powell. In this free course he covers everything to get started with responsive Layouts.
