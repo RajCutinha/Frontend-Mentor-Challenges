@@ -1,0 +1,143 @@
+:root {
+  /* ### Primary */
+  --very-dark-blue: hsl(233, 47%, 7%); /*  (main background) */
+  --dark-desaturated-blue: hsl(244, 38%, 16%); /* (card background) */
+  --soft-violet: hsl(277, 64%, 61%); /* (accent) */
+
+  /* ### Neutral */
+  --white: hsl(0, 0%, 100%); /* (main heading, stats) */
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.75); /*  (main paragraph) */
+  --slightly-transparent-white-2nd: hsla(
+    0,
+    0%,
+    100%,
+    0.6
+  ); /*  (stat headings) */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 4rem;
+  font-family: "Inter", sans-serif;
+}
+
+h2 {
+  font-size: 3rem;
+  font-family: "Inter", sans-serif;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+body {
+  font-size: 1.5rem;
+  background-color: var(--very-dark-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10vh 10vw;
+}
+
+.lead {
+  color: var(--soft-violet);
+  font-size: inherit;
+}
+
+.card-component {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  max-width: 1200px;
+  background-color: var(--dark-desaturated-blue);
+  border-radius: 2em;
+  overflow: hidden;
+  font-size: 1.5rem;
+  margin-bottom: 3em;
+}
+
+.card-component > div {
+  flex: 1 1 400px;
+}
+
+.card-content {
+  flex: 2 1 400px;
+  font-size: 1.5rem;
+  padding: 2em 4em;
+}
+
+.card-content h1 {
+  margin-bottom: 1em;
+  color: var(--white);
+}
+
+.card-content p {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2;
+  color: var(--slightly-transparent-white);
+  margin-bottom: 3em;
+}
+
+.card-content .row {
+  display: flex;
+  gap: 4em;
+}
+
+.card-content .row h2 {
+  color: var(--white);
+}
+
+.card-content .row p {
+  text-transform: uppercase;
+  color: var(--slightly-transparent-white-2nd);
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.card-img {
+  position: relative;
+}
+
+.card-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--soft-violet);
+  opacity: 0.3;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: block;
+  object-fit: cover;
+}
+
+.attribution {
+  font-family: "Lexend Deca", sans-serif;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.attribution a {
+  text-decoration: none;
+  color: var(--soft-violet);
+  font-size: inherit;
+}
