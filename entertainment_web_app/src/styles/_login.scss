@@ -1,0 +1,55 @@
+@use "./mixins";
+
+.login {
+  padding: 1em 0;
+  min-height: 100vh;
+  @include mixins.flex(column, center, center, 4em);
+
+  img {
+    display: block;
+  }
+
+  form {
+    background-color: var(--primary-layer);
+    width: max(50%, 200px);
+    border-radius: 1em;
+    padding: 1.5em 1em;
+
+    & > div {
+      margin-bottom: 1em;
+
+      &:last-of-type {
+        margin-bottom: 2em;
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: 0.7em 0.5em;
+      border: none;
+      border-bottom: 1px solid #fff;
+      background-color: transparent;
+      color: var(--primary-font);
+
+      &::placeholder {
+        color: var(--primary-font);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  button {
+    margin-bottom: 1em;
+  }
+}
