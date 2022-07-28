@@ -30,6 +30,7 @@ body {
   text-align: center;
   position: relative;
   margin-bottom: 5em;
+  height: min-content;
 }
 
 #advice_container > img {
@@ -52,7 +53,7 @@ body {
 #advice_container q {
   color: var(--primary-light-cyan);
   font-family: "Manrope", sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(1rem, 5vw, 2.5rem);
   margin-bottom: 0.5em;
   display: inline-block;
 }
@@ -69,9 +70,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 #advice_container > div img {
   width: 100%;
   height: auto;
+}
+
+.attribution {
+  color: var(--primary-light-cyan);
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8rem;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: var(--primary-neon-green);
 }
