@@ -1,0 +1,42 @@
+:root {
+  --primary-accent: #fc4747;
+  --background: #10141e;
+  --background-accent: #161d2f;
+  --white: #fff;
+  --unfocused: #5a698f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.btn {
+  padding: 0.5em 1.5em;
+  font-weight: 300;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary-accent);
+  border: none;
+}
+
+app-login {
+  width: max(50%, 500px);
+}

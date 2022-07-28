@@ -1,0 +1,61 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  width: 100%;
+
+  img {
+    color: var(--primary-accent);
+    margin-bottom: 2em;
+  }
+
+  & > div {
+    background-color: var(--background-accent);
+    padding: 2em;
+    border-radius: 1em;
+    width: 100%;
+  }
+
+  h1 {
+    font-weight: 300;
+    margin-bottom: 1em;
+  }
+
+  button {
+    margin-bottom: 1.2em;
+    width: 100%;
+    color: var(--white);
+    padding: 1em;
+    border-radius: 0.5em;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+form {
+  div {
+    width: 100%;
+    margin-bottom: 1em;
+    border-bottom: 2px solid var(--unfocused);
+
+    &:last-of-type {
+      margin-bottom: 2em;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 1em;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+  }
+
+  input::placeholder {
+    color: var(--white);
+  }
+}
