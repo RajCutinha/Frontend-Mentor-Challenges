@@ -1,7 +1,7 @@
 <div class="login">
   <img src="../../assets/logo.svg" alt="EntertainmentWebApp" />
   <div>
-    <h1>Login</h1>
+    <h1>{{ signUp ? "Sign Up" : "Login" }}</h1>
     <form>
       <div>
         <input
@@ -35,8 +35,8 @@
     </form>
     <p>
       {{ signUp ? "Already have an account?" : "Don't have an account?" }}
-      <a *ngIf="signUp; else elseB">Login</a>
-      <ng-template #elseB><a>SignUp</a></ng-template>
+      <a *ngIf="signUp; else elseB" routerLink="/login">Login</a>
+      <ng-template #elseB><a routerLink="/signup">SignUp</a></ng-template>
     </p>
   </div>
 </div>
