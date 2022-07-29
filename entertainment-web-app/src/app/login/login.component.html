@@ -20,8 +20,23 @@
           required
         />
       </div>
-      <button class="btn btn-primary">Login to your account</button>
+      <div *ngIf="signUp">
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Repeat Password"
+          required
+        />
+      </div>
+      <button class="btn btn-primary">
+        {{ signUp ? "Create an account" : "Login to your account" }}
+      </button>
     </form>
-    <p>Don't have an account? <a>Sign Up</a></p>
+    <p>
+      {{ signUp ? "Already have an account?" : "Don't have an account?" }}
+      <a *ngIf="signUp; else elseB">Login</a>
+      <ng-template #elseB><a>SignUp</a></ng-template>
+    </p>
   </div>
 </div>
