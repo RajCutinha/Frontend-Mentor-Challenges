@@ -18,4 +18,36 @@
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--white);
+}
+
+.container {
+  padding-inline: 15%;
+}
+
+.btn {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  padding: 0.5em 1.5em;
+  border-radius: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3em 0;
+
+  .btn {
+    padding: 1em 3em;
+    border-radius: 3em;
+  }
 }
