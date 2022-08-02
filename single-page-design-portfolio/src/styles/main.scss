@@ -45,6 +45,11 @@ img {
   color: var(--white);
 }
 
+.btn-secondary {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
 h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -64,7 +69,7 @@ header {
 
 .solutions {
   text-align: center;
-  margin-bottom: 3em;
+  margin-bottom: 6em;
 
   h1 {
     margin-bottom: 0.5em;
@@ -138,5 +143,37 @@ header {
   div:last-child {
     background-color: var(--palatinate-purple);
     color: var(--white);
+  }
+}
+
+.hero {
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 4em;
+
+    img {
+      width: 50%;
+    }
+
+    & * {
+      flex: 1 1 50%;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1em;
+    }
+
+    p {
+      color: var(--grey);
+      line-height: 1.5;
+      margin-bottom: 1.5em;
+    }
+
+    .btn {
+      padding: 1em 3em;
+      border-radius: 3em;
+    }
   }
 }
