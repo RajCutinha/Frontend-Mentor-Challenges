@@ -1,5 +1,21 @@
+:root {
+  --violet: #755cde;
+  --yellow: #f6a560;
+  --orange: #eb7567;
+  --turquoise: #61c4b7;
+  --black: #030303;
+  --grey: #7a746e;
+  --white: #fff7f0;
+  --light-pink: #f39e9e;
+  --palatinate-purple: #552049;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
