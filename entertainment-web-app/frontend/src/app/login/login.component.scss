@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   min-width: 250px;
-  width: 100%;
+  width: max(50%, 500px);
 
   img {
     color: var(--primary-accent);

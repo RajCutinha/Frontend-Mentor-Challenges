@@ -1,0 +1,22 @@
+main {
+  align-items: baseline;
+  gap: 4em;
+
+  app-navigation {
+    margin-top: 5vh;
+    margin-left: 2vw;
+  }
+
+  & > div {
+    width: 100%;
+  }
+
+  .search {
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    color: var(--white);
+    font-weight: 300;
+  }
+}
