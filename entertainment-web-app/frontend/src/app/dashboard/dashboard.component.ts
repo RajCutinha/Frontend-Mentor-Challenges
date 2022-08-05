@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
+import { DataService, Data } from '../services/data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,11 +7,18 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  state: any;
+  state: Data[] = [];
+  recommended: Data[] = [];
 
   constructor(private data: DataService) {}
 
   ngOnInit(): void {
-    this.data.getData().subscribe((res) => (this.state = res));
+    this.data.getData().subscribe((res) => {
+      this.state = res;
+      this.recommended = res.filter((data): boolean => {
+        if (data.thumbnail.trending) return false;
+        return true;
+      });
+    });
   }
 }
