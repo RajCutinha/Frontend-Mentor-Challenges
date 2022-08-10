@@ -3,13 +3,16 @@
     <img src="../../assets/logo.svg" alt="EntertainmentWebApp" />
     <div>
       <h1>{{ signUp ? "Sign Up" : "Login" }}</h1>
-      <form>
+      <form (submit)="handleAuth()">
         <div>
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Email address"
+            required
+            [(ngModel)]="email"
+            [value]="email"
           />
         </div>
         <div>
@@ -19,6 +22,8 @@
             id="password"
             placeholder="Password"
             required
+            [(ngModel)]="password"
+            [value]="password"
           />
         </div>
         <div *ngIf="signUp">
@@ -28,6 +33,8 @@
             id="password"
             placeholder="Repeat Password"
             required
+            [(ngModel)]="rpassword"
+            [value]="rpassword"
           />
         </div>
         <button class="btn btn-primary">
