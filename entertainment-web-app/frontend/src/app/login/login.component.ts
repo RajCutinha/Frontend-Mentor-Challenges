@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AppUser } from '../utils';
+import { AppUser, AppUserInterface } from '../utils';
 
 @Component({
   selector: 'app-login',
@@ -29,33 +29,51 @@ export class LoginComponent implements OnInit {
     return false;
   }
 
-  handleAuth(): void {
-    if (this.loginHandler(this.url)) {
-      if (this.password.trim() === this.rpassword.trim()) {
-        const User = new AppUser(this.email, this.password);
+  handleAuth(e: Event): void {
+    e.preventDefault();
 
-        fetch('http://localhost:3000/api/user', {
-          method: 'POST',
-          headers: {
-            // prettier-ignore
-            'Content-Type': "application/json",
-          },
-          body: JSON.stringify(User),
-        })
-          .then((res) =>
-            res.status === 200 ? console.log(res.statusText) : null
-          )
-          .catch((err) => console.error(err));
+    if (this.password.length > 4) {
+      const User = new AppUser(this.email, this.password);
+      if (this.loginHandler(this.url)) {
+        this.handleAuthSignUp(User);
+        return;
       }
-    }
-    console.log(this.loginHandler(this.url));
 
-    // console.log(User.getUser());
-    // setTimeout(() => {
-    //   this.email = '';
-    // }, 10000);
-    // setTimeout(() => {
-    //   console.log(this.email);
-    // }, 15000);
+      this.handleAuthLogin(User);
+    }
+
+    console.log(this.loginHandler(this.url));
+  }
+
+  handleAuthSignUp(User: AppUserInterface): void {
+    if (this.password.trim() === this.rpassword.trim()) {
+      fetch('http://localhost:3000/api/users', {
+        method: 'POST',
+        headers: {
+          // prettier-ignore
+          'Content-Type': "application/json",
+        },
+        body: JSON.stringify(User),
+      })
+        .then((res) =>
+          res.status === 200 ? console.log(res.statusText) : null
+        )
+        .catch((err) => console.error(err));
+    }
+  }
+
+  handleAuthLogin(User: AppUserInterface): void {
+    fetch('http://localhost:3000/api/user', {
+      method: 'POST',
+      headers: {
+        // prettier-ignore
+        'Content-Type': "application/json",
+      },
+      credentials: 'include',
+      body: JSON.stringify(User),
+    })
+      .then((res) => (res.status === 200 ? res.json() : null))
+      .then((data) => console.log(data))
+      .catch((err) => console.error(err));
   }
 }

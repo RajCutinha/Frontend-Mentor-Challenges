@@ -3,14 +3,14 @@
     <img src="../../assets/logo.svg" alt="EntertainmentWebApp" />
     <div>
       <h1>{{ signUp ? "Sign Up" : "Login" }}</h1>
-      <form (submit)="handleAuth()">
+      <form (submit)="handleAuth($event)">
         <div>
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Email address"
-            required
+            required="true"
             [(ngModel)]="email"
             [value]="email"
           />
@@ -37,7 +37,7 @@
             [value]="rpassword"
           />
         </div>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" type="submit">
           {{ signUp ? "Create an account" : "Login to your account" }}
         </button>
       </form>
