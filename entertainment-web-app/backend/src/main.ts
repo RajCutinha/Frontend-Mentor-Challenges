@@ -1,9 +1,13 @@
 import "dotenv/config";
 import { ClientConfig, Pool } from "pg";
 import express from "express";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 import bcrypt from "bcrypt";
+import JWT from "jsonwebtoken";
 
-interface Registration {
+interface User {
+  id?: string;
   email: string;
   password: string;
 }
@@ -25,13 +29,48 @@ postGres.query("Select * From users", (err, res) => {
 const server = express();
 const port: number = Number(process.env.PORT) || 3000;
 
+server.use(cors());
 server.use(express.json());
-server.use(express.text());
+server.use(cookieParser());
 
-server.get("/api/user", (req, res) => {});
+server.post("/api/user", (req, res) => {
+  console.log("req:", req.cookies);
+  console.log("get user");
+  const { email, password }: User = req.body;
 
-server.post("/api/user", async (req, res) => {
-  const { email, password }: Registration = req.body;
+  postGres.query(
+    "Select * From users Where email = $1",
+    [email],
+    (err, resPostgres) => {
+      console.log(resPostgres.rows[0]);
+
+      const checkPassword = bcrypt.compareSync(
+        password,
+        resPostgres.rows[0].password
+      );
+
+      if (checkPassword) {
+        const { id, email } = resPostgres.rows[0];
+        const user = { id, email };
+        const fullUser = resPostgres.rows[0];
+        const token = JWT.sign({ user }, process.env.JWTSECRET!);
+        res
+          .status(200)
+          .cookie("token", token, {
+            httpOnly: true,
+            expires: new Date(Date.now() + 900000),
+          })
+          .json(fullUser);
+        console.log(token);
+      }
+
+      console.log(checkPassword);
+    }
+  );
+});
+
+server.post("/api/users", async (req, res) => {
+  const { email, password }: User = req.body;
   const hash = await bcrypt.hash(password, 10);
 
   postGres.query("Insert Into users(email, password) Values($1, $2)", [
