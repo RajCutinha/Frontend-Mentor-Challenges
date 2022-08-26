@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService, Data } from '../services/data.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { tap } from 'rxjs';
+import { DataService, Data } from '../services/data/data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +12,7 @@ export class DashboardComponent implements OnInit {
   state: Data[] = [];
   recommended: Data[] = [];
 
-  constructor(private data: DataService) {}
+  constructor(private data: DataService, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.data.getData().subscribe((res) => {
@@ -20,5 +22,13 @@ export class DashboardComponent implements OnInit {
         return true;
       });
     });
+
+    this.http
+      .get('http://localhost:3000/dashboard', {
+        responseType: 'text',
+        observe: 'response',
+        withCredentials: true,
+      })
+      .subscribe((res) => console.log(res));
   }
 }
