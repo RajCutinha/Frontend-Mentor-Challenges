@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppUserInterface } from 'src/app/utils';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ import { AppUserInterface } from 'src/app/utils';
 export class AuthService {
   isAuthenticated: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   signUp(User: AppUserInterface, password: string, rpassword: string): void {
     if (password.trim() === rpassword.trim()) {
@@ -35,11 +36,17 @@ export class AuthService {
         'Content-Type': "application/json",
       },
       credentials: 'include',
-      redirect: 'follow',
       body: JSON.stringify(User),
     })
-      .then((res) => res)
-      // .then((data) => console.log(data))
+      .then((res) => {
+        if (res.status === 200) {
+          this.isAuthenticated = true;
+          this.router.navigateByUrl('/dashboard');
+          return res.json();
+        }
+        return null;
+      })
+      .then((data) => console.log(data))
       .catch((err) => console.error(err));
   }
 }
